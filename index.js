@@ -3,7 +3,7 @@ const client = new Discord.Client()
 const fetch = require("node-fetch")
 const fs = require("fs");
 const prefix = '-';
-const snipes = new Discord.Collection();
+const snipe = new Discord.Collection();
 
 client.commands = new Discord.Collection();
 
@@ -147,7 +147,7 @@ client.on('messageDelete', message => {
 })
 
 client.on('messageDelete', message => {
-  snipes.set(message.channel.id, message)
+  snipe.set(message.channel.id, message)
   const log = client.channels.cache.get('890554368343023616')
   const deleted = new Discord.MessageEmbed()
   .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
