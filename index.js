@@ -109,9 +109,6 @@ client.on('message', message => {
   if(command === 'invite'){
     client.commands.get('invite').execute(message, args)
   }
-  if(command === 'webhook'){
-    client.commands.get('webhook').execute(message, args)
-  }
   if(command === 'eval'){
     client.commands.get('eval').execute(message, args)
   }
