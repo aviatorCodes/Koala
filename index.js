@@ -158,4 +158,4 @@ client.on('messageDelete', message => {
   log.send(deleted)
 })
 
-client.login("ODQ0MTU0NDQ5MDAxMzE2Mzky.YKOSGA.GoueTMKgHOxoJgqWdnrtgEPE_RI")
+client.login("TomKan")
