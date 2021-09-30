@@ -1,22 +1,15 @@
 const Discord = require('discord.js');
-const mongoose = require('mongoose')
+
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
 const config = require('./config.json');
 const fs = require('fs');
-const util = require("util")
+const util = require("util");
+const { mongoConnect } = require('./database/main');
 const readdir = util.promisify(fs.readdir)
 
 
 client.config = config;
  
-
-
-mongoose.connect(config.mongoUri,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-
-} )
-
 
 
 const cmdload = async() => { 
@@ -44,25 +37,9 @@ for (const file of eventFiles) {
 	}
 }
 }
-
-
-
-
+mongoConnect()
+cmdload();
+eventload()
 client.on("error", console.error);
 module.exports = { client };
-client.on("ready", async () => {
-     cmdload()
-     eventload();
-	console.log("I am READY!");
-	setInterval(function() {
-    const activities = [`?help | ?ping`, `Fully Updated`, `Brainy Community`];
-		const activity = activities[Math.floor(Math.random() * activities.length)];
-		client.user.setActivity(activity, { type: "WATCHING" });
-	}, 5000);
-});
-
-
-
-
-
 client.login(config.token);
