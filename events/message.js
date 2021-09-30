@@ -3,15 +3,14 @@ const {client} = require('../index.js');
 const {prefix} = require("../database/schema/prefix")
 module.exports = {
 	name: 'message',
-	once: true,
+	once: false,
 	execute : async(message)=>{
 	let runprefix;
   prefix.findOne({guildID: message.guild.id}).then(async(res)=>{
-	  console.log(res)
+	
      
       runprefix = !res.prefix ? config.prefix : res.prefix;
-       console.log(runprefix)
-
+    
       
   
 	  const args = message.content.slice(runprefix.length).trim().split(/ +/g);
