@@ -1,14 +1,9 @@
-
-
-
 module.exports = {
-    name: "ban",
-    description: "bans a specific user",
-    async run (client, message, args) {
-  try{
-    
-  
-    if (
+  name: "ban",
+  description: "bans a specific user",
+  async run(client, message, args) {
+    try {
+      if (
         message.member?.permissions.has("ADMINISTRATOR") ||
         message.author.id === "924252039737905162"
       ) {
@@ -26,10 +21,13 @@ module.exports = {
           message.reply(
             "Can't ban user with more power <:ono:968816131156635688>"
           );
-          }}
-  }catch(err){
-  console.log(data.cmd.name + " Error:\n" + err)
-  return message.channel.send("An error occurred while trying to run this command")
-  }
-  
-  }}
+        }
+      }
+    } catch (err) {
+      console.log(data.cmd.name + " Error:\n" + err);
+      return message.channel.send(
+        "An error occurred while trying to run this command"
+      );
+    }
+  },
+};

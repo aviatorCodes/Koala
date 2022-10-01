@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec node index.js"
+    "start": "nodemon --exec node index.js",
+    "lint": "prettier --write \"**/**.+(js|tsx|json|css|md)\""
   },
   "author": "avatar",
   "license": "ISC",
