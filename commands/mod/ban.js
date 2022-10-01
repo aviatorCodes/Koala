@@ -1,10 +1,13 @@
 
 
+
 module.exports = {
-    name: "kick",
-    description: "kick the given user",
+    name: "ban",
+    description: "bans a specific user",
     async run (client, message, args) {
   try{
+    
+  
     if (
         message.member?.permissions.has("ADMINISTRATOR") ||
         message.author.id === "924252039737905162"
@@ -17,14 +20,13 @@ module.exports = {
           return;
         }
         if (user?.bannable == true) {
-          message.reply(`User ${user} kicked by ${message.author}`);
-          user.kick();
+          message.reply(`User ${user} banned by ${message.author}`);
+          user.ban();
         } else {
           message.reply(
-            "Can't kick user with more power <:ono:968816131156635688>"
+            "Can't ban user with more power <:ono:968816131156635688>"
           );
-        }
-      }
+          }}
   }catch(err){
   console.log(data.cmd.name + " Error:\n" + err)
   return message.channel.send("An error occurred while trying to run this command")

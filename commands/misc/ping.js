@@ -1,6 +1,5 @@
 
 
-
 module.exports = {
   name: "ping",
   description: "Set a server's prefix",
