@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec node index.js"
+    "start": "nodemon --exec node index.js",
+    "lint": "prettier --write \"**/**.+(js|tsx|json|css|md)\""
   },
   "author": "avatar",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "ms": "^2.1.3",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.13",
+    "prettier": "^2.7.1",
     "wokcommands": "^1.4.3"
   }
 }
